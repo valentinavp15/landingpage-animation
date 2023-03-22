@@ -2,11 +2,12 @@
     --yellow: #ffe250;
     --purple: #a26bb5;
     --pink: #EB57A0;
-    --green: #A9BE6D;
+    --green: #a8be6dd1;
 
 }
 
 body{
+    font-family: 'Lato', sans-serif;
     height: 100vh;
     margin: 0;
     overflow: hidden;
@@ -20,8 +21,185 @@ body{
 .container{
     position: absolute;
     z-index: 1;
+
+    display: grid;
+    /* Anteirormente en el diseño se determinaron estos porcentajes para filas y columnas en el grid */
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 20% 50% 30%;
+    grid-template-areas:"nav     aside"
+                        "section aside"
+                        "footer  aside";
+    height: 100%;
+    width: 100%;
 }
 
+/* SE HACE TODO EL NAVBAR CON ANIMACION */
+.navbar{
+    grid-area: nav;
+    display: flex;
+    height: 100px;
+}
+
+.navbar-content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 0 80px;
+    margin: 25px 0 0 0;
+
+    animation: 2s navbar 0.5s ease-in-out;
+}
+
+@keyframes navbar{
+    0%{transform: translateY(-200px);}
+
+    100%{transform: translateY(0px)}
+}
+
+.navbar-content img{
+    width: 50px;
+}
+
+.navbar-content ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    width: 450px;
+}
+
+.navbar-content ul li a{
+    text-decoration: none;
+    color:var(--pink);
+    font-weight: 300;
+}
+
+/* SE ORGANIZA EL CONTENIDO PRINCIPAL */
+.main-content{
+    grid-area: section;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 0 80px;
+
+    animation: 2s main-content 0.5s ease-in-out;
+}
+
+@keyframes main-content{
+    0%{transform: translateY(-1000px);}
+
+    100%{transform: translateY(0px)}
+}
+
+.main-content p:first-child{
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0px 0px -14px 40px;
+}
+
+.main-content h1{
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 28px 0;
+}
+
+.main-content p:last-child{
+    font-size: 20px;
+    font-weight: 100;
+    width: 65%;
+}
+
+/* SE HACE EL ASIDE */
+.side-content{
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+}
+
+.side-content p{
+    transform: rotate(-90deg);
+    font-size: 36px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    opacity: 0;
+    margin: 0;
+
+    animation: 2.5s side-content-text 0.5s ease-in-out forwards;
+}
+
+@keyframes side-content-text{
+    0%{opacity: 0;}
+
+    100%{opacity: 1;}
+}
+
+.side-content img{
+    width: 80%;
+    grid-row: 1 / 2;
+    grid-column: 2 / 6;
+    z-index: 3;
+
+    animation: 2s side-content-img 0.5s ease-in-out;
+}
+
+@keyframes side-content-img{
+    0%{transform: translateX(600px);}
+
+    100%{transform: translateX(0px)}
+}
+
+.side--color{
+    background-color: var(--purple);
+    height: 100%;
+    grid-row: 1 / 2;
+    grid-column: 4 / 7;
+    z-index: 1;
+}
+
+/* SE HACE EL FOOTER */
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    background: var(--purple);
+    border-radius: 0 80px 0 0;
+    transform: translateY(100%);
+
+    animation: 2.5s footer 0.5s ease-in-out forwards;
+}
+
+@keyframes footer{
+    0% { transform: translateY(100%);}
+
+    100%{ transform: translateY(0);}
+}
+
+.cards{
+    background: var(--green);
+    width: 180px;
+    height: 75%;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: center;
+} 
+.footer div:hover img{
+    cursor: pointer;
+    transform: translateY(-20px) scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer div img{
+    width: 100%;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transform: translateY(0px) scale(1);
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/* SE HACE EL LOADER CON ANIMACION */
 .loader{
     background: white;
     width: 100%;
@@ -32,7 +210,7 @@ body{
     position: absolute;
     z-index: 3;
 
-    animation: loader 2.5s linear forwards;
+    animation: loader 2.0s linear forwards;
 }
 
 @keyframes loader {
@@ -46,7 +224,6 @@ body{
         visibility: hidden}
 }
 
-
 .loader div{
     background:var(--purple);
     width: 30px;
@@ -56,7 +233,7 @@ body{
 
     transform: scale(0);
 
-    animation: scaling 2.5s ease-in-out infinite;
+    animation: scaling 2.0s ease-in-out infinite;
 }
 
 .loader div:nth-child(1){
@@ -70,7 +247,6 @@ body{
 .loader div:nth-child(3){
     animation-delay: 1s;
 }
-
 
 @keyframes scaling {
     0%, 100% {transform: scale(0.2);}
