@@ -2,6 +2,7 @@
     --yellow: #ffe250;
     --purple: #a26bb5;
     --pink: #EB57A0;
+    --pink-opacity: #f761acbc;
     --green: #b4d752d1;
 
 }
@@ -176,8 +177,46 @@ body{
     100%{ transform: translateY(0);}
 }
 
+
+#button1{
+    transform: translateY(200px);
+    animation: 3s button1 0.5s ease-in-out forwards;
+}
+
+@keyframes button1{
+    0% { transform: translateY(100%);}
+
+    100%{ transform: translateY(0);}
+}
+
+#button2{
+    transform: translateY(200px);
+    animation: 3.5s button2 0.5s ease-in-out forwards;
+}
+
+@keyframes button2{
+    0% { transform: translateY(100%);}
+
+    50%{ transform: translateY(100%);}
+
+    100%{ transform: translateY(0);}
+}
+
+#button3{
+    transform: translateY(200px);
+    animation: 4s button3 0.5s ease-in-out forwards;
+}
+
+@keyframes button3{
+    0% { transform: translateY(100%);}
+
+    50%{ transform: translateY(100%);}
+
+    100%{ transform: translateY(0);}
+}
+
 .cards{
-    background: var(--pink);
+    background: var(--pink-opacity);
     width: 180px;
     height: 75%;
     border-radius: 20px 20px 0 0;
@@ -192,12 +231,10 @@ body{
 
 .footer div img{
     width: 100%;
-    margin-bottom: 30px;
     cursor: pointer;
     transform: translateY(0px) scale(1);
     transition: transform 0.5s ease-in-out;
 }
-
 
 /* SE HACE EL LOADER CON ANIMACION */
 .loader{
