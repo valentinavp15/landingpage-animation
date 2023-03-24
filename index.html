@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css"> 
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <!-- main content -->
+        <section class="container">
+            <nav class="navbar">
+                <div class="navbar-content">
+                    <img src="./assets/lego.png" alt="lego">
+                    <ul>
+                        <li><a href="/">EXCLUSIVOS</a></li>
+                        <li><a href="/">NUEVOS</a></li>
+                        <li><a href="/">GIFT CARDS</a></li>
+                        <li><a href="/">FIND A STORE</a></li>                        
+                    </ul>
+                </div>
+            </nav>
+
+            <section class="main-content">
+                <p>Diseña tu</p>
+                <h1>Ramo de Flores!</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, tenetur laborum at consequuntur aspernatur eius et temporibus, ipsa natus esse eaque, dolor mollitia aliquid! Maiores consectetur inventore qui unde nam?</p>
+            </section>
+
+            <section class="side-content">
+                <p>Sunflower</p>
+                <img src="./assets/sunflowers.png" alt="sunflowerlego"> 
+                <div class="side--color"></div>
+            </section>
+
+            <section class="footer">
+                <div class="cards" id="button1">
+                    <img src="./assets/dried-flowers-lego.png" alt="bouquetlego">
+                </div>
+                <div class="cards" id="button2">
+                    <img src="./assets/flower-bouquet.png" alt="bouquetlego">
+                </div>
+                <div class="cards" id="button3">
+                    <img src="./assets/wildflower-bouquet.png" alt="bouquetlego">
+                </div>
+            </section>
+        </section>
+        <!-- loader -->
+        <section class="loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <!-- modal -->
+        <section class="modal hidden">
+            <div class="modal-container">
+                <img class="modal-closed" src="https://img.icons8.com/ios/50/null/multiply.png"/>
+                <div class="modal-content-slider">
+                    <input type="radio" name="slider1" id="radio1" checked>
+                    <input type="radio" name="slider1" id="radio2">
+                    <input type="radio" name="slider1" id="radio3">
+
+                    <div class="cards-slider">
+                        <label for="radio1" id="card1" class="card">
+                            <img src="" alt="">
+                        </label>
+                        <label for="radio2" id="card2" class="card">
+                            <img src="" alt="">
+                        </label>
+                        <label for="radio3" id="card3" class="card">
+                            <img src="" alt="">
+                        </label>
+                    </div>
+                </div>
+                <button>Lo quiero</button>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
