@@ -39,13 +39,13 @@
             </section>
 
             <section class="footer">
-                <div class="cards">
+                <div class="cards" id="button1">
                     <img src="./assets/dried-flowers-lego.png" alt="bouquetlego">
                 </div>
-                <div class="cards">
+                <div class="cards" id="button2">
                     <img src="./assets/flower-bouquet.png" alt="bouquetlego">
                 </div>
-                <div class="cards">
+                <div class="cards" id="button3">
                     <img src="./assets/wildflower-bouquet.png" alt="bouquetlego">
                 </div>
             </section>
@@ -57,7 +57,31 @@
             <div></div>
         </section>
         <!-- modal -->
-        <section></section>
+        <section class="modal hidden">
+            <div class="modal-container">
+                <img class="modal-closed" src="https://img.icons8.com/ios/50/null/multiply.png"/>
+                <div class="modal-content-slider">
+                    <input type="radio" name="slider1" id="radio1" checked>
+                    <input type="radio" name="slider1" id="radio2">
+                    <input type="radio" name="slider1" id="radio3">
+
+                    <div class="cards-slider">
+                        <label for="radio1" id="card1" class="card">
+                            <img src="" alt="">
+                        </label>
+                        <label for="radio2" id="card2" class="card">
+                            <img src="" alt="">
+                        </label>
+                        <label for="radio3" id="card3" class="card">
+                            <img src="" alt="">
+                        </label>
+                    </div>
+                </div>
+                <button>Lo quiero</button>
+                
+            </div>
+        </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
